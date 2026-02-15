@@ -10,10 +10,9 @@ interface ThematicScoresSectionProps {
     seo: number | null;
     sea: number | null;
   };
-  activities: string[];
 }
 
-export function ThematicScoresSection({ scores, activities }: ThematicScoresSectionProps) {
+export function ThematicScoresSection({ scores }: ThematicScoresSectionProps) {
   // Mapping des clés vers les noms affichables
   const thematicMapping: Record<string, string> = {
     clauses_generales: 'Clauses générales du contrat',

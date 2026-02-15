@@ -1,5 +1,6 @@
 import { Building2, Calendar, ArrowRight } from 'lucide-react';
 import { getScoreColorClasses } from '../../utils/scoreHelpers';
+import { useAdmin } from '../../contexts/AdminContext';
 
 interface AuditCardProps {
   id: string;
@@ -10,6 +11,8 @@ interface AuditCardProps {
 }
 
 export function AuditCard({ id, companyName, auditDate, score, levelLabel }: AuditCardProps) {
+  const isAdminMode = useAdmin();
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('fr-FR', {
@@ -20,7 +23,9 @@ export function AuditCard({ id, companyName, auditDate, score, levelLabel }: Aud
   };
 
   const handleClick = () => {
-    window.location.href = `/?id=${id}`;
+    // Si l'utilisateur est en mode admin, conserver le paramètre admin=true
+    const url = isAdminMode ? `/?id=${id}&admin=true` : `/?id=${id}`;
+    window.location.href = url;
   };
 
   const colors = getScoreColorClasses(score);
