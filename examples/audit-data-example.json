@@ -1,0 +1,144 @@
+{
+  "_comment_siteUrl": "L'URL du site audité (sans http:// ou https://)",
+  "siteUrl": "www.example.com",
+
+  "_comment_auditDate": "Date de l'audit au format ISO 8601 (YYYY-MM-DD)",
+  "auditDate": "2025-11-30",
+
+  "_comment_legalRisks": "Les risques juridiques potentiels (amende, emprisonnement, perte SEO)",
+  "legalRisks": {
+    "fine": {
+      "value": "300 000 €",
+      "description": "d'amende potentielle"
+    },
+    "imprisonment": {
+      "value": "1 an",
+      "description": "d'emprisonnement"
+    },
+    "seoLoss": {
+      "value": "Déréférencement",
+      "description": "sur les moteurs de recherche"
+    }
+  },
+
+  "_comment_categories": "Les 4 catégories d'audit avec leurs scores, niveaux de risque, descriptions et détails",
+  "categories": {
+    "mentionsLegales": {
+      "_comment_score": "Score sur 5 (nombre entre 0 et 5)",
+      "score": 2,
+      "_comment_risk": "Niveau de risque: 'low', 'medium' ou 'high'",
+      "risk": "high",
+      "_comment_description": "Description personnalisée du problème détecté",
+      "description": "Informations essentielles manquantes. Compléter votre page de mentions légales est prioritaire.",
+      "_comment_details": "Détails avec constats (tableau de strings) et explication (string)",
+      "details": {
+        "constats": [
+          "L'identité complète de l'éditeur du site n'est pas clairement indiquée (raison sociale, adresse du siège social).",
+          "Les coordonnées du directeur de publication sont absentes.",
+          "Les informations sur l'hébergeur sont incomplètes (nom, raison sociale, adresse)."
+        ],
+        "explanation": "Les mentions légales sont obligatoires pour tout site internet professionnel en France. Leur absence ou leur caractère incomplet constitue un délit puni par l'article 6-III-1 de la LCEN. Au-delà de l'aspect juridique, cela nuit à la crédibilité de votre site auprès de vos clients."
+      }
+    },
+    "cgv": {
+      "score": 3,
+      "risk": "medium",
+      "description": "Conditions générales présentes mais à mettre à jour. Certaines clauses doivent être précisées.",
+      "details": {
+        "constats": [
+          "Les modalités de rétractation ne précisent pas clairement le délai de 14 jours imposé par la loi.",
+          "Les frais de retour en cas d'exercice du droit de rétractation ne sont pas mentionnés.",
+          "Les conditions de garantie légale de conformité ne sont pas détaillées."
+        ],
+        "explanation": "Le Code de la consommation impose des mentions obligatoires dans les CGV. Des clauses manquantes ou imprécises peuvent être considérées comme abusives et engager votre responsabilité. La DGCCRF peut sanctionner ces manquements."
+      }
+    },
+    "donneesPersonnelles": {
+      "score": 2,
+      "risk": "high",
+      "description": "Politique de confidentialité incomplète. Une mise en conformité RGPD est nécessaire.",
+      "details": {
+        "constats": [
+          "Les droits des personnes concernées (accès, rectification, etc.) ne sont pas tous listés, alors que le RGPD impose de les mentionner de manière exhaustive.",
+          "Des transferts de données hors de l'Union Européenne sont évoqués, mais sans préciser les garanties spécifiques mises en place pour les encadrer (ex. clauses contractuelles types)."
+        ],
+        "explanation": "Le principe de transparence du RGPD exige que l'information fournie aux utilisateurs soit complète et précise. Bien que la politique de confidentialité soit de bonne qualité, ces imprécisions constituent des manquements. En cas de contrôle, la CNIL pourrait considérer que l'information n'est pas suffisamment claire."
+      }
+    },
+    "psnc": {
+      "score": 4,
+      "risk": "low",
+      "description": "Vos allégations commerciales sont conformes. Quelques ajustements mineurs pour une conformité totale.",
+      "details": {
+        "constats": [
+          "Certaines formulations marketing pourraient être perçues comme légèrement exagérées ('le meilleur', 'révolutionnaire').",
+          "Les conditions des offres promotionnelles ne sont pas toujours visibles à proximité immédiate de l'annonce."
+        ],
+        "explanation": "Les pratiques commerciales doivent être loyales et transparentes selon le Code de la consommation. Vos communications sont globalement conformes, mais quelques ajustements permettront d'éliminer tout risque de qualification de pratique commerciale trompeuse."
+      }
+    }
+  },
+
+  "_comment_roadmap": "Liste des étapes de mise en conformité (peut contenir 1 à 10 étapes)",
+  "roadmap": [
+    {
+      "_comment_title": "Titre de l'étape",
+      "title": "Compléter les mentions légales",
+      "_comment_icon": "Icône: 'FileText', 'ShoppingCart', 'Shield', 'AlertCircle' ou 'Cookie'",
+      "icon": "FileText",
+      "_comment_color": "Couleur: 'blue', 'peach', 'mint', 'lilac', 'rose' ou 'orange'",
+      "color": "blue",
+      "_comment_recommendations": "Tableau de recommandations (strings)",
+      "recommendations": [
+        "Ajouter l'identité complète de l'éditeur (raison sociale, adresse du siège social, capital social).",
+        "Mentionner le directeur de publication avec ses coordonnées complètes.",
+        "Fournir les informations complètes de l'hébergeur (nom, raison sociale, adresse, téléphone).",
+        "Indiquer le numéro SIRET ou RCS de votre entreprise."
+      ]
+    },
+    {
+      "title": "Réviser et sécuriser les CGV",
+      "icon": "ShoppingCart",
+      "color": "peach",
+      "recommendations": [
+        "Préciser clairement le délai de rétractation de 14 jours et les modalités d'exercice.",
+        "Indiquer qui prend en charge les frais de retour en cas de rétractation.",
+        "Détailler les garanties légales de conformité et des vices cachés.",
+        "Ajouter les informations sur le médiateur de la consommation compétent."
+      ]
+    },
+    {
+      "title": "Mettre à jour la politique de confidentialité (RGPD)",
+      "icon": "Shield",
+      "color": "mint",
+      "recommendations": [
+        "Remplacer le modèle actuel par une politique de confidentialité entièrement rédigée et personnalisée, reflétant les traitements de données réellement mis en œuvre.",
+        "Définir et indiquer des durées de conservation précises pour chaque type de données collectées (ex: données clients, prospects, etc.).",
+        "Compléter la liste des droits des personnes en y ajoutant les droits à la limitation, à l'opposition et à la portabilité.",
+        "Mentionner explicitement le droit d'introduire une réclamation auprès de la CNIL et fournir ses coordonnées."
+      ]
+    },
+    {
+      "title": "Ajouter les avertissements obligatoires (PSNC)",
+      "icon": "AlertCircle",
+      "color": "lilac",
+      "recommendations": [
+        "Modérer les formulations marketing trop superlatives ('le meilleur', 'révolutionnaire').",
+        "S'assurer que les conditions des offres promotionnelles sont visibles à proximité immédiate de l'annonce.",
+        "Vérifier que toutes les allégations sont justifiables et vérifiables.",
+        "Ajouter les mentions légales obligatoires pour les promotions (durée, conditions, stock limité, etc.)."
+      ]
+    },
+    {
+      "title": "Vérifier la conformité des cookies",
+      "icon": "Cookie",
+      "color": "rose",
+      "recommendations": [
+        "Implémenter un bandeau de consentement conforme (refus aussi facile que l'acceptation).",
+        "Lister tous les cookies utilisés avec leur finalité et durée de conservation.",
+        "Ne déposer les cookies non essentiels qu'après consentement de l'utilisateur.",
+        "Permettre à l'utilisateur de retirer son consentement aussi facilement qu'il l'a donné."
+      ]
+    }
+  ]
+}

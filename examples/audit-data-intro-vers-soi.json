@@ -1,0 +1,118 @@
+{
+    "siteUrl": "https://www.intro-vers-soi.com/",
+    "auditDate": "2025-11-30",
+    "legalRisks": {
+      "fine": {
+        "value": "300 000 €",
+        "description": "d'amende potentielle"
+      },
+      "imprisonment": {
+        "value": "1 an",
+        "description": "d'emprisonnement"
+      },
+      "seoLoss": {
+        "value": "Déréférencement",
+        "description": "sur les moteurs de recherche"
+      }
+    },
+    "categories": {
+      "mentionsLegales": {
+        "score": 4,
+        "risk": "low",
+        "description": "Page de mentions légales quasi complète, une information obligatoire manque.",
+        "details": {
+          "constats": [
+            "Le nom du directeur de la publication n'est pas mentionné."
+          ],
+          "explanation": "La loi pour la confiance dans l'économie numérique (LCEN) impose que les mentions légales indiquent notamment l'identité de l'éditeur et le directeur de la publication ; en l'absence de ces informations, le professionnel s'expose à des sanctions pénales."
+        }
+      },
+      "cgv": {
+        "score": 2,
+        "risk": "high",
+        "description": "Conditions générales de vente présentes mais comportant des non-conformités majeures.",
+        "details": {
+          "constats": [
+            "L'identité du professionnel est incomplète : le statut juridique n'est pas clairement précisé et le numéro SIRET est absent.",
+            "La clause sur le droit de rétractation est non conforme : elle prévoit une renonciation automatique au droit de rétractation sans recueillir l'accord exprès du consommateur.",
+            "Une clause est potentiellement abusive car elle impose le paiement intégral d'un pack même en cas d'abandon par le client.",
+            "Les délais d'annulation sont incohérents entre les rendez-vous à l'unité et les packs.",
+            "Le médiateur de la consommation n'est pas mentionné nominalement."
+          ],
+          "explanation": "Le Code de la consommation encadre strictement l'information précontractuelle du consommateur, le droit de rétractation et les clauses abusives : une clause illicite peut être réputée non écrite, et une clause non conforme sur le droit de rétractation peut prolonger ce droit jusqu'à 12 mois, exposant le professionnel à des sanctions administratives et à des litiges."
+        }
+      },
+      "donneesPersonnelles": {
+        "score": 4,
+        "risk": "low",
+        "description": "Politique de confidentialité structurée mais manquant de précision sur les bases légales et les durées de conservation.",
+        "details": {
+          "constats": [
+            "La base légale du traitement n'est pas précisée pour chaque finalité : la mention générale des obligations légales et du consentement est insuffisante.",
+            "Les durées de conservation sont formulées de manière trop générale et ne sont pas détaillées par catégorie de données ou finalité."
+          ],
+          "explanation": "Le RGPD impose un haut niveau de transparence : pour chaque traitement, le responsable doit indiquer une base légale précise ainsi que des durées ou critères de conservation compréhensibles, afin de permettre aux personnes concernées de comprendre et de contrôler l'usage de leurs données."
+        }
+      },
+      "psnc": {
+        "score": 2,
+        "risk": "high",
+        "description": "Allégations à forte connotation médicale et promesses de résultats sans avertissement sur le caractère non médical de la sophrologie.",
+        "details": {
+          "constats": [
+            "Le site utilise un vocabulaire à connotation médicale et fait référence à de nombreuses pathologies (stress, anxiété, burn-out, douleurs chroniques, etc.).",
+            "Les allégations telles que « solution pérenne », « soulagez vos tensions » ou « apaisez vos douleurs chroniques » suggèrent une efficacité thérapeutique sans preuve ni nuance.",
+            "La promesse d'obtenir des résultats en un nombre défini de séances peut être assimilée à une allégation de résultat trompeuse.",
+            "Aucun avertissement n'indique que la sophrologie est une pratique non médicale qui ne se substitue pas à un diagnostic ou à un traitement."
+          ],
+          "explanation": "En matière de pratiques de soins non conventionnelles, l'usage d'allégations thérapeutiques ou de promesses de résultat sans base scientifique et sans avertissement clair peut caractériser une pratique commerciale trompeuse au sens du Code de la consommation, exposant le professionnel à un risque juridique élevé."
+        }
+      }
+    },
+    "roadmap": [
+      {
+        "title": "Réviser et sécuriser les CGV",
+        "icon": "ShoppingCart",
+        "color": "peach",
+        "recommendations": [
+          "Préciser le statut juridique de l'activité (par exemple : entreprise individuelle) et ajouter le numéro SIRET.",
+          "Reformuler intégralement la clause sur le droit de rétractation pour la rendre conforme au Code de la consommation et supprimer la renonciation automatique.",
+          "Supprimer la clause imposant le paiement intégral des packs en cas d'abandon et prévoir une solution plus équilibrée.",
+          "Harmoniser les délais d'annulation pour l'ensemble des prestations.",
+          "Mentionner explicitement le nom du médiateur de la consommation en plus du lien vers son site."
+        ]
+      },
+      {
+        "title": "Encadrer la communication sur la sophrologie",
+        "icon": "AlertCircle",
+        "color": "orange",
+        "recommendations": [
+          "Supprimer ou reformuler les allégations présentant la sophrologie comme une solution thérapeutique ou curative.",
+          "Retirer les promesses de résultat fondées sur un nombre défini de séances.",
+          "Éviter le vocabulaire médical ou scientifique pour décrire la pratique.",
+          "Intégrer un avertissement clair indiquant que la sophrologie est une pratique de bien-être, non médicale, qui ne remplace pas un suivi et un traitement par un professionnel de santé."
+        ]
+      },
+      {
+        "title": "Préciser la politique de confidentialité",
+        "icon": "Shield",
+        "color": "mint",
+        "recommendations": [
+          "Spécifier pour chaque finalité de traitement la base légale correspondante (consentement, exécution du contrat, intérêt légitime, obligation légale).",
+          "Détailler les durées de conservation pour chaque catégorie de données et chaque finalité.",
+          "Vérifier la conformité du bandeau cookies et des mécanismes de recueil du consentement aux exigences du RGPD et de la directive ePrivacy.",
+          "Informer clairement l'utilisateur sur la possibilité de retirer son consentement et sur ses droits RGPD."
+        ]
+      },
+      {
+        "title": "Compléter les mentions légales",
+        "icon": "FileText",
+        "color": "blue",
+        "recommendations": [
+          "Ajouter le nom du directeur ou de la directrice de la publication.",
+          "Vérifier la présence et l'exactitude de l'ensemble des informations d'identification de l'éditeur et de l'hébergeur.",
+          "S'assurer que le lien vers les mentions légales est accessible depuis toutes les pages du site."
+        ]
+      }
+    ]
+  }
