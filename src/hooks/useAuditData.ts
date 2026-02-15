@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import type { AuditData } from '../types/audit.types';
 import type { SupabaseAuditData } from '../types/supabase.types';
 import { validateAuditData } from '../utils/validateAuditData';
@@ -13,6 +14,7 @@ interface UseAuditDataResult {
 }
 
 export function useAuditData(): UseAuditDataResult {
+  const { id: auditId } = useParams<{ id: string }>();
   const [data, setData] = useState<AuditData | null>(null);
   const [supabaseData, setSupabaseData] = useState<SupabaseAuditData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -21,10 +23,6 @@ export function useAuditData(): UseAuditDataResult {
   useEffect(() => {
     async function fetchAuditData() {
       try {
-        // Récupérer l'ID depuis l'URL
-        const params = new URLSearchParams(window.location.search);
-        const auditId = params.get('id');
-        console.log('🔍 URL params:', window.location.search);
         console.log('🔍 Audit ID récupéré:', auditId);
 
         if (!auditId) {
@@ -87,7 +85,7 @@ export function useAuditData(): UseAuditDataResult {
     }
 
     fetchAuditData();
-  }, []);
+  }, [auditId]);
 
   return { data, supabaseData, error, loading };
 }

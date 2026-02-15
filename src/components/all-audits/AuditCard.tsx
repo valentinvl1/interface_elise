@@ -1,4 +1,5 @@
 import { Building2, Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { getScoreColorClasses } from '../../utils/scoreHelpers';
 import { useAdmin } from '../../contexts/AdminContext';
 
@@ -22,18 +23,12 @@ export function AuditCard({ id, companyName, auditDate, score, levelLabel }: Aud
     });
   };
 
-  const handleClick = () => {
-    // Si l'utilisateur est en mode admin, conserver le paramètre admin=true
-    const url = isAdminMode ? `/?id=${id}&admin=true` : `/?id=${id}`;
-    window.location.href = url;
-  };
-
   const colors = getScoreColorClasses(score);
 
   return (
-    <div
-      onClick={handleClick}
-      className="card-pastel px-6 py-5 hover-scale cursor-pointer transition-all duration-300 hover:shadow-lg group"
+    <Link
+      to={`/audit/${id}${isAdminMode ? '?admin=true' : ''}`}
+      className="block card-pastel px-6 py-5 hover-scale cursor-pointer transition-all duration-300 hover:shadow-lg group"
     >
       <div className="flex items-center justify-between gap-4">
         {/* Partie gauche : Icône + Informations */}
@@ -71,6 +66,6 @@ export function AuditCard({ id, companyName, auditDate, score, levelLabel }: Aud
           <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

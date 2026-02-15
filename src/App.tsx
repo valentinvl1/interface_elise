@@ -1,28 +1,16 @@
-import { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AllAuditsPage } from './pages/AllAuditsPage';
 import { AuditDetailPage } from './pages/AuditDetailPage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'all' | 'detail'>('detail');
-
-  useEffect(() => {
-    // Déterminer quelle page afficher en fonction des paramètres URL
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('page');
-
-    if (page === 'all') {
-      setCurrentPage('all');
-    } else {
-      setCurrentPage('detail');
-    }
-  }, []);
-
-  // Afficher la page appropriée
-  if (currentPage === 'all') {
-    return <AllAuditsPage />;
-  }
-
-  return <AuditDetailPage />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/all" replace />} />
+      <Route path="/all" element={<AllAuditsPage />} />
+      <Route path="/audit/:id" element={<AuditDetailPage />} />
+      <Route path="*" element={<Navigate to="/all" replace />} />
+    </Routes>
+  );
 }
 
 export default App;
