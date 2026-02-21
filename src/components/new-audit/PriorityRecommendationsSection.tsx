@@ -49,7 +49,7 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
               À savoir
             </h3>
             <p className="text-sm text-pastel-blueForeground/80 leading-relaxed">
-              Ces recommandations sont issues d'une analyse automatisée de votre contrat. Chaque situation étant unique, nous vous conseillons de les valider avec un expert juridique spécialisé en droit du numérique avant toute action. NumElise peut vous accompagner dans cette démarche.
+              Ce rapport est généré par un outil d'analyse automatisé conçu par une avocate. Il constitue un pré-diagnostic indicatif et ne remplace pas une consultation juridique personnalisée. Chaque situation étant unique, nous vous conseillons de les valider avec un expert juridique spécialisé en droit du numérique avant toute action. NumElise peut vous accompagner dans cette démarche.
             </p>
           </div>
         </div>
