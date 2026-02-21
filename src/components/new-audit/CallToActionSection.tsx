@@ -57,7 +57,7 @@ export function CallToActionSection() {
 
               {/* Bouton dans la carte */}
               <a
-                href="https://numelise.fr/pack-juridique"
+                href="https://www.numetik-avocats.fr/agence-com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -88,7 +88,7 @@ export function CallToActionSection() {
 
               {/* Bouton */}
               <a
-                href="https://calendly.com/numelise"
+                href="https://www.numetik-avocats.fr/avocat-rgpd/rdv-avocat-protection-donnees-personnelles/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-foreground border-2 border-border rounded-full font-semibold hover:bg-muted transition-all duration-300"
