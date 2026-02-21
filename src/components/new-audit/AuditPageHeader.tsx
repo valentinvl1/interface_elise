@@ -28,8 +28,7 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
 
       {/* Sous-titre */}
       <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
-        Voici une synthèse claire et visuelle de la conformité juridique de vos documents.
-        Identifiez rapidement les points à améliorer pour vous protéger légalement.
+        Voici une synthèse claire et visuelle de l'analyse de votre document contractuel. Repérez en un coup d'œil les points de conformité, zones de vigilance et recommandations concrètes pour renforcer votre protection.
       </p>
 
       {/* Carte entreprise */}
