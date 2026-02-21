@@ -35,7 +35,7 @@ export function AuditDetailPage() {
   return (
     <div className="min-h-screen bg-background">
       <AdminBadge />
-      <div className={`max-w-[860px] mx-auto px-4 sm:px-6 lg:px-8 py-12 ${isAdminMode ? 'pt-20' : ''}`}>
+      <div className={`max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8 py-12 ${isAdminMode ? 'pt-20' : ''}`}>
         {/* En-tête de la page */}
         <AuditPageHeader
           companyName={supabaseData.company_name}

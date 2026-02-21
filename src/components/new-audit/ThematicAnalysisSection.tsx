@@ -119,7 +119,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
         Analyse par thématique
       </h2>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {thematicData.map((thematic, index) => {
           const colors = getScoreColorClasses(thematic.score);
           // En mode admin, toujours expanded, sinon utiliser l'état normal
