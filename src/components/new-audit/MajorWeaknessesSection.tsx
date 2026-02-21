@@ -35,6 +35,11 @@ export function MajorWeaknessesSection({ weaknesses }: MajorWeaknessesSectionPro
           ))}
         </div>
       </div>
+
+      {/* Paragraphe de transition */}
+      <p className="mt-10 mb-10 text-sm text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto italic">
+        Ces constats sont fréquents dans les contrats d'agences web, qui sont souvent rédigés sans accompagnement juridique spécialisé. La bonne nouvelle : la plupart de ces points peuvent être corrigés rapidement avec les bons documents.
+      </p>
     </section>
   );
 }

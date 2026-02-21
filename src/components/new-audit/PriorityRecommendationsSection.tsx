@@ -1,3 +1,5 @@
+import { Info } from 'lucide-react';
+
 interface PriorityRecommendationsSectionProps {
   recommendations: string[];
 }
@@ -35,6 +37,24 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
           ))}
         </div>
       </div>
+
+      {/* Section d'information */}
+      <div className="mt-8 card-pastel p-6 bg-gradient-to-br from-pastel-blue to-pastel-blue/50">
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-2xl bg-pastel-blueForeground/10 flex items-center justify-center flex-shrink-0">
+            <Info className="w-5 h-5 text-pastel-blueForeground" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-base font-semibold text-pastel-blueForeground mb-1">
+              À savoir
+            </h3>
+            <p className="text-sm text-pastel-blueForeground/80 leading-relaxed">
+              Ces recommandations sont issues d'une analyse automatisée de votre contrat. Chaque situation étant unique, nous vous conseillons de les valider avec un expert juridique spécialisé en droit du numérique avant toute action. NumElise peut vous accompagner dans cette démarche.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
+
