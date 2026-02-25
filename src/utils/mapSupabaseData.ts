@@ -36,7 +36,8 @@ export function mapSupabaseToAuditData(data: SupabaseAuditData): AuditData {
     score: data.general_score_percent / 20, // Convertir de 0-100 à 0-5
     risk: getScoreRiskLevel(data.general_score_percent),
     description: data.thematic_summary.find(t => t.thematique.includes('Clauses générales') || t.thematique.includes('générales'))?.texte ||
-                 data.verdict_phrase,
+                 data.verdict_phrase ||
+                 'Analyse des clauses générales du contrat',
     details: {
       constats: parseConstats(data.general_constats),
       explanation: data.general_recommendations || 'Aucune recommandation spécifique'
@@ -112,10 +113,11 @@ export function mapSupabaseToAuditData(data: SupabaseAuditData): AuditData {
                    'Risques liés à la protection des données'
     },
     seoLoss: {
-      value: data.level_label,
+      value: data.level_label || 'À évaluer',
       description: findWeaknessContaining(['obligation', 'résultat', 'moyens']) ||
                    data.major_weaknesses[2] ||
-                   data.verdict_phrase
+                   data.verdict_phrase ||
+                   'Risques liés aux obligations contractuelles'
     }
   };
 
