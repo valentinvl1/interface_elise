@@ -39,6 +39,7 @@ interface ThematicAnalysisSectionProps {
 
 export function ThematicAnalysisSection({ scores, summaries, detailedData }: ThematicAnalysisSectionProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedRecommendationIndex, setExpandedRecommendationIndex] = useState<number | null>(null);
   const isAdminMode = useAdmin();
 
   // En mode admin, ouvrir toutes les cartes par défaut
@@ -48,6 +49,11 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
       setExpandedIndex(null);
     }
   }, [isAdminMode]);
+
+  // Fonction pour toggler l'expansion des recommandations (une seule à la fois)
+  const toggleRecommendation = (index: number) => {
+    setExpandedRecommendationIndex(prev => prev === index ? null : index);
+  };
 
   // Mapping des clés vers les noms affichables (pour l'affichage visuel)
   const thematicDisplayNames: Record<string, string> = {
@@ -110,6 +116,15 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
     return text.substring(0, maxLength).trim() + '...';
   };
 
+  // Fonction pour tronquer les recommandations avec une limite différente
+  const truncateRecommendation = (text: string, maxLength: number = 150) => {
+    if (!text || text.length <= maxLength) return text;
+    // Trouver le dernier espace avant maxLength pour ne pas couper un mot
+    const lastSpaceIndex = text.lastIndexOf(' ', maxLength);
+    const cutIndex = lastSpaceIndex > 0 ? lastSpaceIndex : maxLength;
+    return text.substring(0, cutIndex).trim() + '...';
+  };
+
   return (
     <section
       className="mb-16 animate-fade-in"
@@ -166,6 +181,36 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
                     }`}
                   />
                 </button>
+              )}
+
+              {/* Recommandations (mode non-admin uniquement) */}
+              {!isAdminMode && thematic.recommendations && (
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <h4 className="text-sm font-semibold text-foreground mb-2">
+                    Recommandations
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {expandedRecommendationIndex === index
+                      ? thematic.recommendations
+                      : truncateRecommendation(thematic.recommendations)}
+                    {thematic.recommendations.length > 150 && expandedRecommendationIndex !== index && (
+                      <button
+                        onClick={() => toggleRecommendation(index)}
+                        className="ml-1 font-bold underline text-primary hover:text-primary/80 transition-colors"
+                      >
+                        voir plus
+                      </button>
+                    )}
+                    {expandedRecommendationIndex === index && thematic.recommendations.length > 150 && (
+                      <button
+                        onClick={() => toggleRecommendation(index)}
+                        className="ml-1 font-bold underline text-primary hover:text-primary/80 transition-colors"
+                      >
+                        voir moins
+                      </button>
+                    )}
+                  </p>
+                </div>
               )}
 
               {/* Constats et Recommandations détaillés (mode admin uniquement) */}
