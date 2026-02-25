@@ -108,6 +108,13 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
           ? (detailedData as any)[detailFields.recommendations] || ''
           : '',
       };
+    })
+    .filter(thematic => {
+      // Cacher la carte si le score est 0 ET les recommandations sont vides
+      if (thematic.score === 0 && (!thematic.recommendations || thematic.recommendations.trim() === '')) {
+        return false;
+      }
+      return true;
     });
 
   // Fonction pour tronquer le texte
@@ -134,7 +141,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
         Analyse par thématique
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className={`gap-4 ${thematicData.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-2'}`}>
         {thematicData.map((thematic, index) => {
           const colors = getScoreColorClasses(thematic.score);
           // En mode admin, toujours expanded, sinon utiliser l'état normal
@@ -143,7 +150,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
           return (
             <div
               key={index}
-              className="card-pastel p-6"
+              className={`card-pastel p-6 ${thematicData.length === 1 ? 'w-full max-w-2xl' : ''}`}
             >
               {/* En-tête avec nom et score */}
               <div className="flex items-baseline gap-2 mb-3">
