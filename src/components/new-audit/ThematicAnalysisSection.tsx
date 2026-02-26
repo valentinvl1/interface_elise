@@ -97,7 +97,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData, secti
   };
 
   // Mapping des clés vers les booléens de visibilité
-  const thematicVisibilityKeys: Record<string, keyof typeof sectionVisibility | null> = {
+  const thematicVisibilityKeys: Record<string, 'section_creation' | 'section_maintenance' | 'section_hebergement' | 'section_cm' | 'section_seo' | 'section_sea' | null> = {
     clauses_generales: null, // Pas de booléen pour clauses générales
     creation_refonte: 'section_creation',
     maintenance: 'section_maintenance',
