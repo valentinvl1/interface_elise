@@ -35,9 +35,17 @@ interface ThematicAnalysisSectionProps {
     sea_constats?: string;
     sea_recommendations?: string;
   };
+  sectionVisibility?: {
+    section_creation: boolean;
+    section_maintenance: boolean;
+    section_hebergement: boolean;
+    section_cm: boolean;
+    section_seo: boolean;
+    section_sea: boolean;
+  };
 }
 
-export function ThematicAnalysisSection({ scores, summaries, detailedData }: ThematicAnalysisSectionProps) {
+export function ThematicAnalysisSection({ scores, summaries, detailedData, sectionVisibility }: ThematicAnalysisSectionProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [expandedRecommendationIndex, setExpandedRecommendationIndex] = useState<number | null>(null);
   const isAdminMode = useAdmin();
@@ -88,9 +96,19 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
     sea: { constats: 'sea_constats', recommendations: 'sea_recommendations' },
   };
 
+  // Mapping des clés vers les booléens de visibilité
+  const thematicVisibilityKeys: Record<string, keyof typeof sectionVisibility | null> = {
+    clauses_generales: null, // Pas de booléen pour clauses générales
+    creation_refonte: 'section_creation',
+    maintenance: 'section_maintenance',
+    hebergement: 'section_hebergement',
+    community_management: 'section_cm',
+    seo: 'section_seo',
+    sea: 'section_sea',
+  };
+
   // Créer un tableau de thématiques avec leurs scores, textes et détails
   const thematicData = Object.entries(scores)
-    .filter(([_, score]) => score !== null)
     .map(([key, score]) => {
       const displayName = thematicDisplayNames[key] || key;
       const dbName = thematicDbNames[key] || key;
@@ -98,8 +116,9 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
       const detailFields = thematicDetailFields[key];
 
       return {
+        key,
         name: displayName,
-        score: score as number,
+        score: score,
         text: summary?.texte || '',
         constats: detailedData && detailFields
           ? (detailedData as any)[detailFields.constats] || ''
@@ -110,8 +129,21 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
       };
     })
     .filter(thematic => {
-      // Cacher la carte si le score est 0 ET les recommandations sont vides
-      if (thematic.score === 0 && (!thematic.recommendations || thematic.recommendations.trim() === '')) {
+      // Traiter NULL comme 0
+      const scoreValue = thematic.score ?? 0;
+
+      // Vérifier le booléen de visibilité
+      const visibilityKey = thematicVisibilityKeys[thematic.key];
+      if (visibilityKey && sectionVisibility && !sectionVisibility[visibilityKey]) {
+        // Si le booléen est false, cacher la carte SAUF si le score n'est pas 0 (ou NULL)
+        if (scoreValue === 0) {
+          return false;
+        }
+        // Si le score ≠ 0, on continue (on affiche la carte malgré le booléen à false)
+      }
+
+      // Cacher la carte si le score est 0 (ou NULL) ET les recommandations sont vides
+      if (scoreValue === 0 && (!thematic.recommendations || thematic.recommendations.trim() === '')) {
         return false;
       }
       return true;
@@ -143,7 +175,9 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
 
       <div className={`gap-4 ${thematicData.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-2'}`}>
         {thematicData.map((thematic, index) => {
-          const colors = getScoreColorClasses(thematic.score);
+          // Traiter NULL comme 0 pour l'affichage
+          const displayScore = thematic.score ?? 0;
+          const colors = getScoreColorClasses(displayScore);
           // En mode admin, toujours expanded, sinon utiliser l'état normal
           const isExpanded = isAdminMode || expandedIndex === index;
 
@@ -158,7 +192,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
                   {thematic.name}
                 </h3>
                 <span className={`text-lg font-semibold ${colors.fg}`}>
-                  {thematic.score}%
+                  {displayScore}%
                 </span>
               </div>
 
@@ -166,7 +200,7 @@ export function ThematicAnalysisSection({ scores, summaries, detailedData }: The
               <div className="progress-bar mb-4">
                 <div
                   className={`h-full ${colors.progress} rounded-full transition-all duration-1000`}
-                  style={{ width: `${thematic.score}%` }}
+                  style={{ width: `${displayScore}%` }}
                 />
               </div>
 

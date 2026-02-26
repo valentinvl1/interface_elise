@@ -71,6 +71,14 @@ export function AuditDetailPage() {
             sea_constats: supabaseData.sea_constats,
             sea_recommendations: supabaseData.sea_recommendations,
           }}
+          sectionVisibility={{
+            section_creation: supabaseData.section_creation,
+            section_maintenance: supabaseData.section_maintenance,
+            section_hebergement: supabaseData.section_hebergement,
+            section_cm: supabaseData.section_cm,
+            section_seo: supabaseData.section_seo,
+            section_sea: supabaseData.section_sea,
+          }}
         />
 
         {/* Bloc 4 : Faiblesses majeures (conditionnel) */}

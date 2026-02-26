@@ -49,6 +49,12 @@ export interface SupabaseAuditData {
   sea_constats: string;
   sea_recommendations: string;
   document_extractandanonymous: string;
+  section_creation: boolean;
+  section_maintenance: boolean;
+  section_hebergement: boolean;
+  section_cm: boolean;
+  section_seo: boolean;
+  section_sea: boolean;
 }
 
 export interface ThematicSummary {
