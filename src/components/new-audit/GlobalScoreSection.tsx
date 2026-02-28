@@ -23,11 +23,10 @@ export function GlobalScoreSection({ score, level, verdict }: GlobalScoreSection
   };
 
   return (
-    <section
-      className={`card-pastel p-8 md:p-12 text-center mb-16 animate-fade-in ${getBorderAndBgClasses()}`}
-      style={{ animationDelay: '0s' }}
-    >
-      {/* Score avec pastille */}
+    <section className="mb-16 animate-fade-in" style={{ animationDelay: '0s' }}>
+      <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`card-pastel p-8 md:p-12 text-center ${getBorderAndBgClasses()}`}>
+          {/* Score avec pastille */}
       <div className="flex flex-col items-center gap-6 mb-6">
         {/* Emoji pastille */}
         <div className={`${colors.bg} rounded-full w-20 h-20 flex items-center justify-center text-4xl`}>
@@ -48,10 +47,12 @@ export function GlobalScoreSection({ score, level, verdict }: GlobalScoreSection
         </span>
       </div>
 
-      {/* Phrase verdict */}
-      <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
-        {verdict}
-      </p>
+          {/* Phrase verdict */}
+          <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
+            {verdict}
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

@@ -10,13 +10,11 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
   }
 
   return (
-    <section
-      className="mb-16 animate-fade-in"
-      style={{ animationDelay: '0.8s' }}
-    >
-      <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
-        Recommandations prioritaires
-      </h2>
+    <section className="mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+      <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+          Recommandations prioritaires
+        </h2>
 
       <div className="card-pastel p-6 md:p-8 bg-pastel-blue/10">
         <div className="space-y-4">
@@ -57,6 +55,7 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
             </p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

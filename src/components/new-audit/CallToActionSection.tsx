@@ -1,13 +1,11 @@
-import { ArrowRight, Shield, Check, User } from 'lucide-react';
+import { ArrowRight, Shield, Check } from 'lucide-react';
 
 export function CallToActionSection() {
   return (
-    <section
-      className="mb-16 animate-fade-in"
-      style={{ animationDelay: '1.0s' }}
-    >
-      <div className="card-pastel p-8 md:p-12 bg-gradient-to-br from-pastel-blue/20 to-pastel-mint/20">
-        {/* Icône */}
+    <section className="mb-16 animate-fade-in" style={{ animationDelay: '1.0s' }}>
+      <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="card-pastel p-8 md:p-12 bg-gradient-to-br from-pastel-blue/20 to-pastel-mint/20">
+          {/* Icône */}
         <div className="flex justify-center mb-6">
           <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
             <Shield className="w-8 h-8 text-primary" />
@@ -73,9 +71,11 @@ export function CallToActionSection() {
             <div className="card-pastel p-6 bg-white border-2 border-border h-full flex flex-col items-center justify-between text-center">
               {/* Avatar */}
               <div className="flex-shrink-0 mb-4">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pastel-blue to-pastel-mint flex items-center justify-center">
-                  <User className="w-10 h-10 text-primary" />
-                </div>
+                <img
+                  src="/photo_elise.png"
+                  alt="Élise Guilhaudis, Avocate"
+                  className="w-32 h-32 rounded-full object-cover"
+                />
               </div>
 
               {/* Texte */}
@@ -97,6 +97,7 @@ export function CallToActionSection() {
               </a>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

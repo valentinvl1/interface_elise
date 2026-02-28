@@ -21,10 +21,11 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
 
   return (
     <header className="mb-16 text-center">
-      {/* Titre principal */}
-      <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-        Audit juridique de vos documents contractuels
-      </h1>
+      <div className="max-w-[640px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Titre principal */}
+        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Audit juridique de vos documents contractuels
+        </h1>
 
       {/* Sous-titre */}
       <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
@@ -75,6 +76,7 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
             )}
           </div>
         </AdminOnly>
+      </div>
       </div>
     </header>
   );

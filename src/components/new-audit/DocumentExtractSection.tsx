@@ -9,10 +9,11 @@ export function DocumentExtractSection({ documentExtract }: DocumentExtractSecti
 
   return (
     <section className="mb-16 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-      {/* En-tête de la section */}
-      <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
-        Document extrait et anonymisé
-      </h2>
+      <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* En-tête de la section */}
+        <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+          Document extrait et anonymisé
+        </h2>
 
       {/* Carte avec textarea */}
       <div className="card-pastel p-6 md:p-8">
@@ -26,6 +27,7 @@ export function DocumentExtractSection({ documentExtract }: DocumentExtractSecti
           className="w-full min-h-[400px] rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y font-mono"
           style={{ whiteSpace: 'pre-wrap' }}
         />
+      </div>
       </div>
     </section>
   );
