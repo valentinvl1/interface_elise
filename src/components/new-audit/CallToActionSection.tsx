@@ -22,10 +22,10 @@ export function CallToActionSection() {
           Numelise propose un pack juridique adapté aux agences web : contrats conformes, CGV, DPA, clauses optimisées pour votre activité.
         </p>
 
-        {/* Grille 2 colonnes : 60/40 */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          {/* Colonne 1 : Le pack juridique (60%) */}
-          <div className="md:col-span-3">
+        {/* Grille 2 colonnes : 50/50 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Colonne 1 : Le pack juridique (50%) */}
+          <div>
             <div className="card-pastel p-6 bg-white border-2 border-primary/20">
               {/* En-tête du produit */}
               <div className="mb-4">
@@ -66,8 +66,8 @@ export function CallToActionSection() {
             </div>
           </div>
 
-          {/* Colonne 2 : Prendre rendez-vous avec Élise Guilhaudis (40%) */}
-          <div className="md:col-span-2">
+          {/* Colonne 2 : Prendre rendez-vous avec Élise Guilhaudis (50%) */}
+          <div>
             <div className="card-pastel p-6 bg-white border-2 border-border h-full flex flex-col items-center justify-between text-center">
               {/* Avatar */}
               <div className="flex-shrink-0 mb-4">
