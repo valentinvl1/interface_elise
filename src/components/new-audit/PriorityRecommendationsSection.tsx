@@ -11,7 +11,7 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
 
   return (
     <section className="mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-      <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
           Recommandations prioritaires
         </h2>
