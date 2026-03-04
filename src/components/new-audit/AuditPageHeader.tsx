@@ -24,7 +24,7 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
       <div className="max-w-[640px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre principal */}
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Diagnostic juridique de vos documents contractuels
+          Diagnostic juridique de votre contrat
         </h1>
 
       {/* Sous-titre */}

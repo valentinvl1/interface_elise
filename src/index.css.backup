@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Couleurs de base */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Couleurs pastel (doux et arrondis) */
+    --pastel-blue: 199 89% 88%;
+    --pastel-blue-foreground: 199 89% 35%;
+    --pastel-peach: 24 100% 88%;
+    --pastel-peach-foreground: 24 100% 45%;
+    --pastel-mint: 152 76% 85%;
+    --pastel-mint-foreground: 152 76% 35%;
+    --pastel-lilac: 271 76% 88%;
+    --pastel-lilac-foreground: 271 76% 40%;
+    --pastel-rose: 340 82% 88%;
+    --pastel-rose-foreground: 340 82% 45%;
+    --pastel-orange: 33 100% 85%;
+    --pastel-orange-foreground: 33 100% 40%;
+
+    /* Niveaux de risque */
+    --risk-low: 152 76% 85%;
+    --risk-low-foreground: 152 76% 35%;
+    --risk-medium: 24 100% 88%;
+    --risk-medium-foreground: 24 100% 45%;
+    --risk-high: 0 84% 88%;
+    --risk-high-foreground: 0 84% 45%;
+
+    /* Primary pour les CTAs */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Radius global */
+    --radius: 1rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+@layer components {
+  /* Cards avec effet glassmorphism doux */
+  .card-pastel {
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl border border-border/50 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.08)] transition-all duration-300;
+  }
+
+  /* Badges de risque */
+  .badge-risk-low {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-risk-low text-risk-lowForeground;
+  }
+
+  .badge-risk-medium {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-risk-medium text-risk-mediumForeground;
+  }
+
+  .badge-risk-high {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-risk-high text-risk-highForeground;
+  }
+
+  /* Barre de progression arrondie */
+  .progress-bar {
+    @apply w-full h-2.5 bg-muted rounded-full overflow-hidden;
+  }
+
+  /* Ombres douces */
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Hover scale */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02];
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+}
