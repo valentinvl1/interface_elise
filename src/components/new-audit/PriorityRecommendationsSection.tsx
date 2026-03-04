@@ -46,12 +46,8 @@ export function PriorityRecommendationsSection({ recommendations }: PriorityReco
             <h3 className="text-base font-semibold text-pastel-blueForeground mb-1">
               À savoir
             </h3>
-            <p className="text-sm text-pastel-blueForeground/80 leading-relaxed mb-3">
-              Ce rapport est généré par un outil d'analyse automatisé conçu par une avocate. Il constitue un pré-diagnostic indicatif et ne remplace pas une consultation juridique personnalisée. Chaque situation étant unique, nous vous conseillons de les valider avec un expert juridique spécialisé en droit du numérique avant toute action. NumElise peut vous accompagner dans cette démarche.
-            </p>
             <p className="text-sm text-pastel-blueForeground/80 leading-relaxed">
-              Pour en savoir plus sur les conditions générales d'utilisation de l'outil{' '}
-              <span className="font-bold underline">cliquez ici</span>.
+              Ce rapport est généré par un outil d'analyse automatisé conçu par une avocate. Il constitue un pré-diagnostic indicatif et ne remplace pas une consultation juridique personnalisée. Chaque situation étant unique, nous vous conseillons de les valider avec un expert juridique spécialisé en droit du numérique avant toute action. Elise Guilhaudis peut vous accompagner dans cette démarche.
             </p>
           </div>
         </div>

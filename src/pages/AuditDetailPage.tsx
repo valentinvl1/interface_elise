@@ -10,6 +10,7 @@ import { DocumentExtractSection } from '../components/new-audit/DocumentExtractS
 import { AdminBadge } from '../components/AdminBadge';
 import { AdminOnly } from '../components/AdminOnly';
 import { useAdmin } from '../contexts/AdminContext';
+import { Footer } from '../components/Footer';
 
 export function AuditDetailPage() {
   const { supabaseData, error, loading } = useAuditData();
@@ -21,7 +22,7 @@ export function AuditDetailPage() {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
-          <p className="text-lg text-muted-foreground">Chargement de votre audit...</p>
+          <p className="text-lg text-muted-foreground">Chargement de votre diagnostic...</p>
         </div>
       </div>
     );
@@ -99,6 +100,9 @@ export function AuditDetailPage() {
           <DocumentExtractSection documentExtract={supabaseData.document_extractandanonymous} />
         </AdminOnly>
       </div>
+
+      {/* Footer avec mentions légales et politique de confidentialité */}
+      <Footer />
     </div>
   );
 }

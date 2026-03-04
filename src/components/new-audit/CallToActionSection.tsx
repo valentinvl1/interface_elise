@@ -14,12 +14,12 @@ export function CallToActionSection() {
 
         {/* Titre */}
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-          Vous souhaitez sécuriser votre contrat&nbsp;?
+          Vous souhaitez sécuriser votre activité&nbsp;?
         </h2>
 
         {/* Sous-titre */}
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 text-center">
-          Numelise propose un pack juridique adapté aux agences web : contrats conformes, CGV, DPA, clauses optimisées pour votre activité.
+          Elise Guilhaudis propose un pack juridique complet et adapté aux Agences & Freelance WordPress.
         </p>
 
         {/* Grille 2 colonnes : 50/50 */}
@@ -30,9 +30,10 @@ export function CallToActionSection() {
               {/* En-tête du produit */}
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Le pack juridique de l'agence Web
+                  Un Pack Conformité WordPress pour exercer en toute sérénité
                 </h3>
                 <div className="flex items-baseline gap-1">
+                  <span className="text-base text-muted-foreground mr-2">à partir de</span>
                   <span className="text-4xl font-bold text-primary">790€</span>
                 </div>
               </div>
@@ -43,22 +44,28 @@ export function CallToActionSection() {
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-pastel-mint flex items-center justify-center mt-0.5">
                     <Check className="w-3.5 h-3.5 text-pastel-mintForeground" />
                   </div>
-                  <span className="text-foreground">Checklist complète de conformité</span>
+                  <span className="text-foreground">vos documents juridiques</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-pastel-mint flex items-center justify-center mt-0.5">
                     <Check className="w-3.5 h-3.5 text-pastel-mintForeground" />
                   </div>
-                  <span className="text-foreground">Support par email</span>
+                  <span className="text-foreground">des ressources pratiques</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-pastel-mint flex items-center justify-center mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-pastel-mintForeground" />
+                  </div>
+                  <span className="text-foreground">1h de RDV avec votre avocate</span>
                 </div>
               </div>
 
               {/* Bouton dans la carte */}
               <a
-                href="https://www.numetik-avocats.fr/agence-com/"
+                href="https://www.numetik-avocats.fr/pack-conformite-agence-freelance-wordpress/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#01B2C8] text-white rounded-full font-semibold text-lg hover:bg-[#019CAF] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Découvrir le pack juridique
                 <ArrowRight className="w-5 h-5" />
@@ -88,7 +95,7 @@ export function CallToActionSection() {
 
               {/* Bouton */}
               <a
-                href="https://www.numetik-avocats.fr/avocat-rgpd/rdv-avocat-protection-donnees-personnelles/"
+                href="https://www.numetik-avocats.fr/contact/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-foreground border-2 border-border rounded-full font-semibold hover:bg-muted transition-all duration-300"

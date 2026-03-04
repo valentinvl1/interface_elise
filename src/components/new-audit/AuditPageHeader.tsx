@@ -24,7 +24,7 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
       <div className="max-w-[640px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre principal */}
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Audit juridique de vos documents contractuels
+          Diagnostic juridique de vos documents contractuels
         </h1>
 
       {/* Sous-titre */}
@@ -48,7 +48,7 @@ export function AuditPageHeader({ companyName, auditDate, usesAi, hasReferenceDo
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Calendar className="w-4 h-4" />
-              <span>Audit réalisé le {formatDate(auditDate)}</span>
+              <span>Diagnostic réalisé le {formatDate(auditDate)}</span>
             </div>
           </div>
         </div>
